@@ -117,18 +117,10 @@ header>.brand{background:var(--cream);padding:12px 16px;border-radius:16px;width
 header.scrolled>.brand{width:137px;padding:8px 16px}
 @media(max-width:600px){header>.brand{width:142px;padding:10px 12px}header>.brand .logo{height:76px}header>.brand small{font-size:9px}}
 
-/* Original product photograph: preserve every cup, including its base. */
-header,header.scrolled{background:#fff;border-bottom:1px solid #082bb414}
-header>.brand,header.scrolled>.brand{background:#fff}
-.hero{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.25fr);align-items:center;gap:2%;height:auto;min-height:100svh;padding:175px 5% 65px;background:#fff}
-.hero::before{display:none}
-.hero .hero-photo{position:static;inset:auto;grid-column:2;grid-row:1;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;z-index:auto}
-.hero .hero-copy{position:static;grid-column:1;grid-row:1;width:auto;left:auto;top:auto;bottom:auto}
-.hero .hero-copy h1{position:static;width:auto;transform:none;font-size:clamp(48px,5.3vw,76px);line-height:1.05;margin:0 0 30px;color:var(--blue);text-shadow:none}
-.hero .hero-intro{position:static;width:auto;margin:0 0 26px}
-.hero .hero-intro p{font-size:15px;line-height:1.65;color:var(--ink);text-shadow:none;margin:0 0 12px}
-.hero .hero-copy>.button{position:static;background:var(--blue);color:#fff;min-height:50px}
-.hero .hero-copy>.button:hover{background:#001a87}
-.hero .hero-note{display:none}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding:165px 7% 45px;gap:24px}.hero .hero-copy{grid-column:1;grid-row:1}.hero .hero-photo{grid-column:1;grid-row:2;max-width:800px;justify-self:center}.hero .hero-copy h1{font-size:58px}.hero .hero-intro{max-width:660px}}
-@media(max-width:600px){.hero{padding:150px 6% 32px;min-height:100svh;gap:12px}.hero .hero-copy h1{font-size:48px;margin-bottom:25px}.hero .hero-intro p{font-size:14px;line-height:1.6}.hero .hero-photo{width:100%;height:auto}.hero .hero-copy>.button{margin-bottom:8px}}
+
+/* Keep the original concrete scene; frame every cup above the ledge. */
+.hero{height:auto;min-height:100svh;aspect-ratio:3/2;background:#d9cbb5}
+.hero-photo{object-fit:cover;object-position:center bottom}
+header>.brand{background:#f3f0e9;padding:12px 16px;border-radius:16px}
+@media(min-width:901px){.hero{min-height:0;height:max(760px,66.6667vw);max-height:none}.hero-copy{width:32%;left:5%}.hero-intro{bottom:120px}.hero-copy>.button{bottom:52px}}
+@media(max-width:900px){.hero{aspect-ratio:auto;height:auto;min-height:0;padding:170px 7% 68vw;background:#e6ded1}.hero .hero-photo{inset:auto 0 0;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:center bottom}.hero::before{display:none}.hero .hero-copy{position:relative;inset:auto;width:100%}.hero .hero-copy h1{position:static;transform:rotate(-5deg);width:100%;font-size:56px;margin:0 0 34px}.hero .hero-intro{position:static;width:auto;margin:0 0 24px}.hero .hero-intro p{font-size:15px;color:var(--ink);text-shadow:none;line-height:1.65}.hero .hero-copy>.button{position:static;background:var(--blue);color:#fff}.hero-note{display:none}}
