@@ -112,15 +112,7 @@
 
 .collection-menu-copy{max-width:880px;margin:40px 0 20px;font-size:20px;line-height:1.85}.collection-menu-copy>p{margin:0 0 30px}.matcha-landscapes{list-style:none;padding:0;margin:0}.matcha-landscapes li{border-top:1px solid #082bb426;padding:22px 0;font-size:18px;line-height:1.8}@media(max-width:600px){.collection-menu-copy{font-size:17px;margin-top:28px}.matcha-landscapes li{font-size:16px;padding:18px 0}}
 
-/* Clear, solid backdrop keeps the KaffBrew logo legible over photography. */
-header>.brand{background:var(--cream);padding:12px 16px;border-radius:16px;width:184px}
-header.scrolled>.brand{width:137px;padding:8px 16px}
-@media(max-width:600px){header>.brand{width:142px;padding:10px 12px}header>.brand .logo{height:76px}header>.brand small{font-size:9px}}
-
-
-/* Keep the original concrete scene; frame every cup above the ledge. */
-.hero{height:auto;min-height:100svh;aspect-ratio:3/2;background:#d9cbb5}
-.hero-photo{object-fit:cover;object-position:center bottom}
-header>.brand{background:#f3f0e9;padding:12px 16px;border-radius:16px}
-@media(min-width:901px){.hero{min-height:0;height:max(760px,66.6667vw);max-height:none}.hero-copy{width:32%;left:5%}.hero-intro{bottom:120px}.hero-copy>.button{bottom:52px}}
-@media(max-width:900px){.hero{aspect-ratio:auto;height:auto;min-height:0;padding:170px 7% 68vw;background:#e6ded1}.hero .hero-photo{inset:auto 0 0;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:center bottom}.hero::before{display:none}.hero .hero-copy{position:relative;inset:auto;width:100%}.hero .hero-copy h1{position:static;transform:rotate(-5deg);width:100%;font-size:56px;margin:0 0 34px}.hero .hero-intro{position:static;width:auto;margin:0 0 24px}.hero .hero-intro p{font-size:15px;color:var(--ink);text-shadow:none;line-height:1.65}.hero .hero-copy>.button{position:static;background:var(--blue);color:#fff}.hero-note{display:none}}
+/* Original full-photo hero and transparent header, with complete cup bases. */
+.hero-photo{object-position:center bottom}
+@media(min-width:901px){.hero{height:max(760px,66.6667vw);min-height:0;max-height:none}.hero-copy{width:32%;left:5%}}
+@media(max-width:900px){.hero{height:100svh;min-height:850px;background:#dfd1ba}.hero-photo{inset:auto 0 0;width:100%;height:auto;object-fit:contain;object-position:center bottom}.hero h1{top:180px}.hero-copy{width:86%;left:7%}.hero-intro{bottom:340px}.hero-intro p{color:var(--ink);text-shadow:none}.hero-copy>.button{bottom:265px}.hero::before{background:linear-gradient(to top,rgba(12,17,24,.3),transparent 30%)}.hero-note{display:none}}
