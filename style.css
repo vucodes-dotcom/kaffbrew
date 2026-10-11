@@ -129,3 +129,20 @@
 }
 @media(max-width:600px){.hero{min-height:950px}.hero h1{top:150px}.hero-intro{top:31%;bottom:auto}.hero-copy>.button{top:62%;bottom:auto}}
 @media(max-aspect-ratio:4/3){.hero{background-size:100% 100%}}
+/* iPhone: show the scene and every cup before the longer introduction. */
+@media(max-width:600px){
+ header{height:104px;padding:14px 6%}
+ header .brand{width:105px}header .logo{height:68px}header .brand small{font-size:8px}
+ .hero{height:auto;min-height:0;max-height:none;padding:126px 6% 30px;background-size:100% 650px;background-position:center top;background-color:#e5d7c3;overflow:hidden}
+ .hero .hero-photo{inset:auto;top:230px;left:-40%;width:145%;max-width:none;height:auto;object-fit:contain;mask-image:linear-gradient(to bottom,transparent,#000 25%,#000 92%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 25%,#000 92%,transparent)}
+ .hero::before{display:none}
+ .hero .hero-copy{position:relative;inset:auto;width:100%;display:flex;flex-direction:column}
+ .hero .hero-copy h1{position:static;width:100%;font-size:48px;line-height:1;transform:rotate(-5deg);margin:0;order:0}
+ .hero .hero-copy h1::after{width:180px}
+ .hero .hero-copy>.button{position:static;order:1;align-self:flex-start;margin-top:calc(66vw + 45px);min-height:48px;background:var(--blue);color:#fff}
+ .hero .hero-intro{position:static;width:100%;order:2;margin:28px 0 0}
+ .hero .hero-intro p{font-size:14px;line-height:1.7;color:var(--ink);text-shadow:none;margin:0 0 14px}
+ .hero .hero-note{display:none}
+}
+@media(max-width:600px){.hero .hero-intro{width:calc(100% + 12vw);margin:28px -6vw -30px;padding:24px 6vw 16px;background:var(--cream)}}
+@media(max-width:600px){.hero .hero-copy>.button{margin-top:calc(66vw + 70px)}}
