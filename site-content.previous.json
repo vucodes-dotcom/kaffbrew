@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publishedAt": "2026-11-17T07:13:34.955Z",
+  "publishedAt": "2026-11-17T07:18:30.901Z",
   "home": {
     "title": "Good Sips\nBrighter Days",
     "intro": "Nằm cách Đà Lạt 30km, KaffBrew là một quán cà phê địa phương ở Đức Trọng (Lâm Đồng), mang tinh thần thưởng thức hiện đại và đề cao tính nguyên bản len lỏi vào đời sống, văn hoá, con người địa phương. Đồng thời, chúng mình cũng muốn lan toả những nét đẹp của vùng đất này đi muôn nơi.",
@@ -134,11 +134,9 @@
   },
   "settings": {
     "orderLink": "https://zalo.me/0352905250",
-    "address": "",
-    "hours": "",
+    "address": "Cổng Sân bay Liên Khương - Đức Trọng - Lâm Đồng",
+    "hours": "6:30 - 20:00",
     "phone": "0352905250",
-    "facebook": "",
-    "instagram": "",
-    "tiktok": ""
+    "facebook": "https://www.facebook.com/profile.php?id=61589485191655"
   }
 }
