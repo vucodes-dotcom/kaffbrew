@@ -1,28 +1,28 @@
 {
   "items": [
     {
-      "image": "phin.webp",
       "title": "Good sips",
+      "image": "/kaffbrew/media/mwkbggm2-f9zx5q5d.png",
       "link": "?view=menu&category=phin"
     },
     {
-      "image": "sign.webp",
       "title": "Our little world",
+      "image": "sign.webp",
       "link": "?view=story"
     },
     {
-      "image": "croffle.webp",
       "title": "Just croffle it",
+      "image": "croffle.webp",
       "link": "?view=menu&category=croffle"
     },
     {
-      "image": "matcha.webp",
       "title": "Brighter days",
+      "image": "matcha.webp",
       "link": "?view=menu&category=matcha"
     },
     {
-      "image": "cold-brew.webp",
       "title": "Good vibes",
+      "image": "cold-brew.webp",
       "link": "?view=menu&category=cold-brew"
     }
   ]
