@@ -1,0 +1,37 @@
+name: Đăng nội dung KaffBrew
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS request
+        required: false
+        default: '{}'
+        type: string
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: kaffbrew-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Kiểm tra và chuẩn bị nội dung
+        run: node publish-content.mjs
+      - name: Lưu phiên bản đã đăng
+        run: |
+          git config user.name 'KaffBrew Editor'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site-content.json site-content.previous.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish owner content update'
+            git push origin HEAD:main
+          fi
+      - name: Cập nhật website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
