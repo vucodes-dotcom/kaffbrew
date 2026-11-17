@@ -1,23 +1,18 @@
 {
   "items": [
     {
-      "title": "Good sips",
+      "title": "Nguyên bản",
       "image": "/kaffbrew/media/mwkbggm2-f9zx5q5d.png",
       "link": "?view=menu&category=phin"
     },
     {
-      "title": "Our little world",
-      "image": "sign.webp",
+      "title": "Địa phương",
+      "image": "/kaffbrew/media/mwkbo557-gnguon5y.png",
       "link": "?view=story"
     },
     {
-      "title": "Just croffle it",
-      "image": "croffle.webp",
-      "link": "?view=menu&category=croffle"
-    },
-    {
-      "title": "Brighter days",
-      "image": "matcha.webp",
+      "title": "Tự nhiên",
+      "image": "/kaffbrew/media/mwkbvu9l-i2ppxjzp.png",
       "link": "?view=menu&category=matcha"
     },
     {
