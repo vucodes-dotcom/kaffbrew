@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publishedAt": "2026-11-17T04:49:24.717Z",
+  "publishedAt": "2026-11-17T06:17:07.421Z",
   "home": {
     "title": "Good Sips\nBrighter Days",
     "intro": "Nằm cách Đà Lạt 30km, KaffBrew là một quán cà phê địa phương ở Đức Trọng (Lâm Đồng), mang tinh thần thưởng thức hiện đại và đề cao tính nguyên bản len lỏi vào đời sống, văn hoá, con người địa phương. Đồng thời, chúng mình cũng muốn lan toả những nét đẹp của vùng đất này đi muôn nơi.",
@@ -19,25 +19,25 @@
       {
         "id": "phin",
         "title": "PHIN",
-        "image": "/kaffbrew/media/mwk7pog7-43v0pkxf.webp",
-        "alt": "Vietnamese iced milk coffee being poured",
-        "copy": "Bold tradition. Smoother tomorrow.",
+        "image": "/kaffbrew/media/mwk9yyng-z02bq1wh.png",
+        "alt": "Vietnamese iced milk coffee",
+        "copy": "Sự giao thoa giữa các thế hệ, với các món truyền thống và sáng tạo. Biến cà phê phin trở nên thú vị hơn.",
         "link": "?view=menu&category=phin"
       },
       {
         "id": "matcha",
         "title": "MATCHA",
-        "image": "matcha.webp",
-        "alt": "Iced matcha with cream in a Kaffbrew cup",
-        "copy": "Pure energy in every sip.",
+        "image": "/kaffbrew/media/mwkauubv-7ga808yu.png",
+        "alt": "Iced matcha in a Kaffbrew cup",
+        "copy": "Chu du đến những phong cảnh tuyệt đẹp với mỗi ngụm matcha.",
         "link": "?view=menu&category=matcha"
       },
       {
         "id": "cold-brew",
         "title": "COLD BREW",
-        "image": "cold-brew.webp",
+        "image": "/kaffbrew/media/mwkasnld-z5y78m9r.png",
         "alt": "Iced cold brew in a Kaffbrew cup",
-        "copy": "Cool mind. Bright ideas.",
+        "copy": "Một ly cà phê mang lại cảm giác mát lạnh, sảng khoái và giải khát.",
         "link": "?view=menu&category=cold-brew"
       }
     ]

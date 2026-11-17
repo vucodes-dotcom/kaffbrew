@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "publishedAt": "2026-11-17T06:17:07.421Z",
+  "publishedAt": "2026-11-17T06:54:59.928Z",
   "home": {
     "title": "Good Sips\nBrighter Days",
     "intro": "Nằm cách Đà Lạt 30km, KaffBrew là một quán cà phê địa phương ở Đức Trọng (Lâm Đồng), mang tinh thần thưởng thức hiện đại và đề cao tính nguyên bản len lỏi vào đời sống, văn hoá, con người địa phương. Đồng thời, chúng mình cũng muốn lan toả những nét đẹp của vùng đất này đi muôn nơi.",
@@ -45,28 +45,23 @@
   "gallery": {
     "items": [
       {
-        "image": "phin.webp",
-        "title": "Good sips",
+        "title": "Nguyên bản",
+        "image": "/kaffbrew/media/mwkbggm2-f9zx5q5d.png",
         "link": "?view=menu&category=phin"
       },
       {
-        "image": "sign.webp",
-        "title": "Our little world",
+        "title": "Địa phương",
+        "image": "/kaffbrew/media/mwkbo557-gnguon5y.png",
         "link": "?view=story"
       },
       {
-        "image": "croffle.webp",
-        "title": "Just croffle it",
-        "link": "?view=menu&category=croffle"
-      },
-      {
-        "image": "matcha.webp",
-        "title": "Brighter days",
+        "title": "Tự nhiên",
+        "image": "/kaffbrew/media/mwkbvu9l-i2ppxjzp.png",
         "link": "?view=menu&category=matcha"
       },
       {
-        "image": "cold-brew.webp",
         "title": "Good vibes",
+        "image": "cold-brew.webp",
         "link": "?view=menu&category=cold-brew"
       }
     ]
