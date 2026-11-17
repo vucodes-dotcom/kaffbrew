@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "phin",
+      "title": "PHIN",
+      "alt": "Vietnamese iced milk coffee being poured",
+      "copy": "Bold tradition. Smoother tomorrow.",
+      "image": "phin.webp",
+      "link": "?view=menu&category=phin"
+    },
+    {
+      "id": "matcha",
+      "title": "MATCHA",
+      "alt": "Iced matcha with cream in a Kaffbrew cup",
+      "copy": "Pure energy in every sip.",
+      "image": "matcha.webp",
+      "link": "?view=menu&category=matcha"
+    },
+    {
+      "id": "cold-brew",
+      "title": "COLD BREW",
+      "alt": "Iced cold brew in a Kaffbrew cup",
+      "copy": "Cool mind. Bright ideas.",
+      "image": "cold-brew.webp",
+      "link": "?view=menu&category=cold-brew"
+    }
+  ]
+}

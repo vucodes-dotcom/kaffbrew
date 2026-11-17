@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "image": "phin.webp",
+      "title": "Good sips",
+      "link": "?view=menu&category=phin"
+    },
+    {
+      "image": "sign.webp",
+      "title": "Our little world",
+      "link": "?view=story"
+    },
+    {
+      "image": "croffle.webp",
+      "title": "Just croffle it",
+      "link": "?view=menu&category=croffle"
+    },
+    {
+      "image": "matcha.webp",
+      "title": "Brighter days",
+      "link": "?view=menu&category=matcha"
+    },
+    {
+      "image": "cold-brew.webp",
+      "title": "Good vibes",
+      "link": "?view=menu&category=cold-brew"
+    }
+  ]
+}

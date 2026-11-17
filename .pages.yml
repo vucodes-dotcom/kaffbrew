@@ -1,0 +1,723 @@
+{
+  "media": {
+    "input": "media",
+    "output": "/kaffbrew/media",
+    "extensions": [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp"
+    ],
+    "rename": "random"
+  },
+  "content": [
+    {
+      "name": "home",
+      "label": "01 · Ảnh & chữ đầu trang",
+      "type": "file",
+      "path": "draft-home.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Tiêu đề lớn",
+          "type": "text",
+          "required": true,
+          "description": "Xuống dòng để chia thành hai dòng."
+        },
+        {
+          "name": "image",
+          "label": "Ảnh đầu trang",
+          "type": "image",
+          "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+          "options": {
+            "extensions": [
+              "jpg",
+              "jpeg",
+              "png",
+              "webp"
+            ],
+            "rename": "random"
+          }
+        },
+        {
+          "name": "imageAlt",
+          "label": "Mô tả ngắn về ảnh",
+          "type": "string"
+        },
+        {
+          "name": "position",
+          "label": "Vị trí trọng tâm ảnh",
+          "type": "select",
+          "options": {
+            "values": [
+              {
+                "name": "left",
+                "label": "Bên trái"
+              },
+              {
+                "name": "center",
+                "label": "Ở giữa"
+              },
+              {
+                "name": "right",
+                "label": "Bên phải"
+              }
+            ]
+          }
+        },
+        {
+          "name": "intro",
+          "label": "Đoạn giới thiệu 1",
+          "type": "text"
+        },
+        {
+          "name": "intro2",
+          "label": "Đoạn giới thiệu 2",
+          "type": "text"
+        },
+        {
+          "name": "button",
+          "label": "Chữ trên nút đặt hàng",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "label": "Dòng chữ nhỏ trên ảnh",
+          "type": "text"
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "label": "02 · Sản phẩm & giá",
+      "type": "file",
+      "path": "draft-products.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Danh sách",
+          "type": "object",
+          "list": {
+            "min": 0,
+            "max": 40,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Tên sản phẩm",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "category",
+              "label": "Nhóm sản phẩm",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "name": "phin",
+                    "label": "PHIN"
+                  },
+                  {
+                    "name": "matcha",
+                    "label": "MATCHA"
+                  },
+                  {
+                    "name": "cold-brew",
+                    "label": "COLD BREW"
+                  },
+                  {
+                    "name": "croffle",
+                    "label": "CROFFLE"
+                  },
+                  {
+                    "name": "ca-cao",
+                    "label": "CA CAO"
+                  },
+                  {
+                    "name": "sinh-to",
+                    "label": "SINH TỐ"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "Ảnh sản phẩm",
+              "type": "image",
+              "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ],
+                "rename": "random"
+              }
+            },
+            {
+              "name": "description",
+              "label": "Mô tả",
+              "type": "text"
+            },
+            {
+              "name": "price",
+              "label": "Giá (VNĐ)",
+              "type": "number",
+              "description": "Ví dụ: 35000. Để trống nếu chưa muốn hiển thị giá.",
+              "options": {
+                "min": 0,
+                "max": 10000000
+              }
+            },
+            {
+              "name": "visible",
+              "label": "Hiển thị trên website",
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "available",
+              "label": "Còn phục vụ",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "series",
+      "label": "03 · Ảnh Phin / Matcha / Cold Brew",
+      "type": "file",
+      "path": "draft-series.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Danh sách",
+          "type": "object",
+          "list": {
+            "min": 3,
+            "max": 3,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          },
+          "fields": [
+            {
+              "name": "id",
+              "label": "Mã",
+              "type": "string",
+              "hidden": true
+            },
+            {
+              "name": "title",
+              "label": "Tên bộ sưu tập",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "image",
+              "label": "Ảnh bộ sưu tập",
+              "type": "image",
+              "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ],
+                "rename": "random"
+              }
+            },
+            {
+              "name": "alt",
+              "label": "Mô tả ảnh",
+              "type": "string"
+            },
+            {
+              "name": "copy",
+              "label": "Câu giới thiệu ngắn",
+              "type": "string"
+            },
+            {
+              "name": "link",
+              "label": "Khi khách bấm vào ảnh",
+              "type": "string",
+              "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+              "pattern": {
+                "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+                "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+              }
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gallery",
+      "label": "04 · Dãy ảnh cuối trang",
+      "type": "file",
+      "path": "draft-gallery.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Danh sách",
+          "type": "object",
+          "list": {
+            "min": 1,
+            "max": 12,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Chữ trên ảnh",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "image",
+              "label": "Ảnh",
+              "type": "image",
+              "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ],
+                "rename": "random"
+              }
+            },
+            {
+              "name": "link",
+              "label": "Khi khách bấm vào ảnh",
+              "type": "string",
+              "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+              "pattern": {
+                "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+                "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+              }
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "label": "05 · Sự kiện & thông báo",
+      "type": "file",
+      "path": "draft-events.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Danh sách",
+          "type": "object",
+          "list": {
+            "min": 0,
+            "max": 40,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Tên sự kiện",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "image",
+              "label": "Ảnh sự kiện",
+              "type": "image",
+              "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ],
+                "rename": "random"
+              }
+            },
+            {
+              "name": "description",
+              "label": "Nội dung",
+              "type": "text"
+            },
+            {
+              "name": "start",
+              "label": "Ngày bắt đầu",
+              "type": "date",
+              "options": {
+                "format": "yyyy-MM-dd"
+              }
+            },
+            {
+              "name": "end",
+              "label": "Ngày kết thúc",
+              "type": "date",
+              "description": "Sau ngày này, sự kiện tự ẩn. Để trống để không giới hạn.",
+              "options": {
+                "format": "yyyy-MM-dd"
+              }
+            },
+            {
+              "name": "visible",
+              "label": "Hiển thị sự kiện",
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "button",
+              "label": "Chữ trên nút",
+              "type": "string"
+            },
+            {
+              "name": "link",
+              "label": "Liên kết của nút",
+              "type": "string",
+              "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+              "pattern": {
+                "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+                "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+              }
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "collections",
+      "label": "06 · Giới thiệu các nhóm đồ uống",
+      "type": "file",
+      "path": "draft-collections.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Danh sách",
+          "type": "object",
+          "list": {
+            "min": 6,
+            "max": 6,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          },
+          "fields": [
+            {
+              "name": "id",
+              "label": "Mã nhóm",
+              "type": "string",
+              "hidden": true
+            },
+            {
+              "name": "title",
+              "label": "Tên nhóm",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Dòng mô tả ngắn",
+              "type": "text"
+            },
+            {
+              "name": "image",
+              "label": "Ảnh đại diện nhóm",
+              "type": "image",
+              "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ],
+                "rename": "random"
+              }
+            },
+            {
+              "name": "intro",
+              "label": "Giới thiệu trên trang sản phẩm",
+              "type": "text",
+              "description": "Để trống để giữ bài giới thiệu hiện tại."
+            },
+            {
+              "name": "details",
+              "label": "Các ý bổ sung",
+              "type": "text",
+              "description": "Mỗi ý một dòng."
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "story",
+      "label": "07 · Câu chuyện KaffBrew",
+      "type": "file",
+      "path": "draft-story.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Tiêu đề",
+          "type": "text"
+        },
+        {
+          "name": "lead",
+          "label": "Câu giới thiệu",
+          "type": "text"
+        },
+        {
+          "name": "location",
+          "label": "Địa điểm",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "label": "Ảnh câu chuyện",
+          "type": "image",
+          "description": "Chọn ảnh hoặc tải ảnh mới. Nên dùng JPG, PNG hoặc WebP, dưới 5 MB.",
+          "options": {
+            "extensions": [
+              "jpg",
+              "jpeg",
+              "png",
+              "webp"
+            ],
+            "rename": "random"
+          }
+        },
+        {
+          "name": "paragraphs",
+          "label": "Các đoạn văn",
+          "type": "text",
+          "list": {
+            "min": 1,
+            "max": 12
+          }
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "label": "08 · Liên hệ & đặt hàng",
+      "type": "file",
+      "path": "draft-settings.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "orderLink",
+          "label": "Liên kết đặt hàng (Zalo)",
+          "type": "string",
+          "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+          "pattern": {
+            "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+            "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+          }
+        },
+        {
+          "name": "phone",
+          "label": "Số điện thoại",
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "label": "Địa chỉ",
+          "type": "text"
+        },
+        {
+          "name": "hours",
+          "label": "Giờ mở cửa",
+          "type": "string"
+        },
+        {
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "string",
+          "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+          "pattern": {
+            "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+            "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+          }
+        },
+        {
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "string",
+          "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+          "pattern": {
+            "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+            "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+          }
+        },
+        {
+          "name": "tiktok",
+          "label": "TikTok",
+          "type": "string",
+          "description": "Dán liên kết https://… hoặc giữ liên kết hiện tại.",
+          "pattern": {
+            "regex": "^(https://[^\\s]+|\\?[^\\s]*|)$",
+            "message": "Dùng liên kết https:// hoặc liên kết nội bộ bắt đầu bằng ?"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "name": "publish",
+          "label": "Đăng lên website",
+          "workflow": "publish-content.yml",
+          "ref": "main",
+          "cancelable": false,
+          "confirm": {
+            "title": "Đăng các thay đổi?",
+            "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+            "button": "Đăng lên website"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "hide": true,
+    "content": {
+      "merge": true
+    }
+  },
+  "actions": [
+    {
+      "name": "publish",
+      "label": "Đăng lên website",
+      "workflow": "publish-content.yml",
+      "ref": "main",
+      "cancelable": false,
+      "confirm": {
+        "title": "Đăng các thay đổi?",
+        "message": "Hãy bấm Save ở các mục đã sửa và xem bản nháp trước. Nội dung sẽ hiển thị cho khách sau khoảng 1–2 phút.",
+        "button": "Đăng lên website"
+      }
+    }
+  ]
+}
